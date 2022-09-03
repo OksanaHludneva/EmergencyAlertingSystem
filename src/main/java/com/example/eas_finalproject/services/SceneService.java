@@ -34,9 +34,7 @@ public class SceneService {
         alert.setTitle(title);
         alert.setContentText(message);
         alert.setHeaderText(null);
-        //one below - show alert before moving to next step
         alert.showAndWait();
-        alert.show();
     }
 
 }

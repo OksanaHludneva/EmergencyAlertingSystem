@@ -1,6 +1,7 @@
 package com.example.eas_finalproject.services;
 
 import com.example.eas_finalproject.exceptions.UserNotFoundException;
+import com.example.eas_finalproject.models.User;
 import com.example.eas_finalproject.repository.DBConnectionManager;
 
 import java.sql.Connection;
@@ -28,5 +29,23 @@ public class UserService {
         if (userId != null) return userId;
 
         throw new UserNotFoundException("User with username "+ username + " not found");
+    }
+
+    public void registerUser(User user) throws Exception {
+        connection = DBConnectionManager.getConnection();
+        String query = "INSERT INTO users(username, password, name, email, phone) VALUES(?,?,?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+
+        preparedStatement.setString(1, user.getUsername());
+        preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setString(3, user.getName());
+        preparedStatement.setString(4, user.getEmail());
+        preparedStatement.setString(5, user.getPhone());
+        int result = preparedStatement.executeUpdate();
+
+        DBConnectionManager.close(null, preparedStatement, connection);
+
+        if (result != 1) throw new Exception("Registration failed for user with username " + user.getUsername());
     }
 }

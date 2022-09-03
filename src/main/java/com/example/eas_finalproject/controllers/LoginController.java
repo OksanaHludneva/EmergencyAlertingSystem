@@ -33,7 +33,7 @@ public class LoginController {
                     Alert.AlertType.CONFIRMATION
             );
             DataRepository.getInstance().setLoggedInUserId(userId);
-            SceneService.changeScene(actionEvent, "Profile");
+            SceneService.changeScene(actionEvent, "messaging");
         }catch (Exception exception){
             SceneService.showAlert("Login Failed", exception.getMessage(), Alert.AlertType.ERROR);
         }

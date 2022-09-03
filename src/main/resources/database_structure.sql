@@ -6,7 +6,6 @@ CREATE DATABASE IF NOT EXISTS eas;
 
 USE eas;
 
--- Do we add some time, date? Line 14-15
 CREATE TABLE IF NOT EXISTS contacts (
     id INT NOT NULL AUTO_INCREMENT,
     phoneNr VARCHAR(20) NOT NULL,
@@ -22,6 +21,16 @@ CREATE TABLE IF NOT EXISTS accident (
     accidentName VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
     messageText VARCHAR (200),
+    primary key (id)
+);
+
+CREATE TABLE IF NOT EXISTS users (
+	id INT NOT NULL AUTO_INCREMENT,
+    username varchar(50) NOT NULL UNIQUE,
+    password varchar (200) NOT NULL,
+    name varchar(100) NOT NULL,
+    email varchar(100) NOT NULL UNIQUE,
+    phone varchar(20) NOT NULL UNIQUE,
     primary key (id)
 );
 
@@ -52,3 +61,18 @@ INSERT INTO accident (codeColor, accidentName, description) VALUES
 ('Yellow', 'Missing adult', 'Not know location, absence of adult'),
 ('Amber', 'Mising child', 'Not know location, absence of child'),
 ('Pink', 'Hightened situation', 'Any combinations of any codes');
+
+INSERT INTO users (username, password, name, email, phone) VALUES
+('testUser', 'testUser', 'Test User', 'testUser@eas.com', 12345678);
+
+-- display contact table
+SELECT * FROM contacts;
+
+-- display contact accident
+SELECT * FROM accident;
+
+-- display contact users
+SELECT * FROM users;
+
+-- get all phone nr from specific region
+SELECT * FROM contacts WHERE region = "Zemgale";
