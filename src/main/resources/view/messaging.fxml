@@ -37,4 +37,6 @@
 
     <Button onAction="#sendMessageClick" GridPane.columnIndex="3" GridPane.rowIndex="18" prefHeight="26.0" prefWidth="125.0"
             text="Send message" style="-fx-background-color: #d95924" />
+    <Button onAction="#logoutClick" GridPane.columnIndex="3" GridPane.rowIndex="19" prefHeight="26.0" prefWidth="125.0"
+            text="Logout" style="-fx-background-color: #5baeb7" />
 </GridPane>

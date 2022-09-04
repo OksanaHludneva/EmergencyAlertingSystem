@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS contacts (
     id INT NOT NULL AUTO_INCREMENT,
     phoneNr VARCHAR(20) NOT NULL,
     region VARCHAR (100) NOT NULL,
-    createdAt timestamp default current_timestamp,
-    updatedAt timestamp default current_timestamp on update current_timestamp,
+    createdAt timestamp DEFAULT current_timestamp,
+    updatedAt timestamp DEFAULT current_timestamp ON UPDATE current_timestamp,
     primary key (id)
 );
 
