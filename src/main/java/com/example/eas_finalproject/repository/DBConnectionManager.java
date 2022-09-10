@@ -11,12 +11,11 @@ public class DBConnectionManager {
 
     private static PropertiesConfiguration databaseProperties = new PropertiesConfiguration();
     private static Connection connection;
-
     private static String password;
     private static String username;
     private static String connectionUrl;
 
-    private DBConnectionManager(){
+    public DBConnectionManager(){
         updateConnection();
     }
 
