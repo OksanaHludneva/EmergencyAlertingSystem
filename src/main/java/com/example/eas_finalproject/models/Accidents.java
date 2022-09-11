@@ -23,5 +23,4 @@ public class Accidents {
     private String yellow;
     private String amber;
     private String pink;
-
 }

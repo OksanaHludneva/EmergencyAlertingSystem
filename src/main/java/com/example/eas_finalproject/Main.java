@@ -19,4 +19,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    //MessagingService messagingService = new MessagingService();
+    //messagingService.messagingRequest("Riga", "Alert", "Message text here");
 }

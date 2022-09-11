@@ -23,7 +23,4 @@ public class DataRepository {
 
         return dataRepository_instance;
     }
-
-
-
 }

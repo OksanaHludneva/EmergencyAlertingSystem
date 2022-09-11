@@ -1,78 +1,87 @@
-/*DROP DATABASE IF EXISTS eas;*/
+-- DROP DATABASE IF EXISTS eas;
+-- DROP TABLE IF EXISTS accidents;
+-- DROP TABLE IF EXISTS contacts;
+-- DROP TABLE IF EXISTS regions;
+-- DROP TABLE IF EXISTS users;
 
 SET GLOBAL time_zone = '+2:00';
+SET SQL_SAFE_UPDATES = 0;
 
-CREATE DATABASE IF NOT EXISTS eas;
+CREATE DATABASE IF NOT EXISTS java2728_eas;
 
-USE eas;
+USE java2728_eas;
 
 CREATE TABLE IF NOT EXISTS contacts (
     id INT NOT NULL AUTO_INCREMENT,
-    phoneNr VARCHAR(20) NOT NULL,
-    region VARCHAR (100) NOT NULL,
-    createdAt timestamp DEFAULT current_timestamp,
-    updatedAt timestamp DEFAULT current_timestamp ON UPDATE current_timestamp,
+    phoneNr VARCHAR(20) NOT NULL UNIQUE,
+    region VARCHAR (50) NOT NULL,
+    createdAt timestamp default current_timestamp,
+    updatedAt timestamp default current_timestamp on update current_timestamp,
     primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTS accident (
+CREATE TABLE IF NOT EXISTS regions (
+	id INT NOT NULL AUTO_INCREMENT,
+    region varchar(50) NOT NULL,
+    primary key (id)
+);
+
+CREATE TABLE IF NOT EXISTS accidents (
     id INT NOT NULL AUTO_INCREMENT,
     codeColor VARCHAR (50) NOT NULL,
     accidentName VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
     messageText VARCHAR (200),
-    primary key (id)
+    regionsId INT NOT NULL,
+    primary key (id),
+    foreign key (regionsId) REFERENCES regions (id)
 );
 
 CREATE TABLE IF NOT EXISTS users (
 	id INT NOT NULL AUTO_INCREMENT,
-    username varchar(50) NOT NULL UNIQUE,
-    password varchar (200) NOT NULL,
-    name varchar(100) NOT NULL,
-    email varchar(100) NOT NULL UNIQUE,
-    phone varchar(20) NOT NULL UNIQUE,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR (200) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL UNIQUE,
     primary key (id)
 );
 
 INSERT INTO contacts (phoneNr, region) VALUES
-(26844115, 'Zemgale'),
-(29658889, 'Vidzeme'),
-(26444585, 'Latgale'),
-(29444789, 'Kurzeme'),
-(20018022, 'Kurzeme'),
-(29333457, 'Kurzeme'),
-(26364680, 'Latgale'),
-(26721348, 'Latgale'),
-(29000754, 'Vidzeme'),
-(26565612, 'Zemgale');
+(+37129663132, 'Riga'),
+(+37126311662, 'Riga');
 
-INSERT INTO accident (codeColor, accidentName, description) VALUES
-('Aqua', 'Weather alert', 'Flood or any other natural disater'),
-('Black', 'Threat, attack', 'Bomb threat, suspicious object, attack to entity or country'),
-('Blue', 'Public health', 'Cardiac arrest, medical emergency'),
-('Brown', 'Hazardous spill', 'Infectios, harmful substance leakage'),
-('Green', 'Evacuation', 'Facility, region'),
-('Grey', 'Infrastructure loss or failure', 'Electricity or any other infrastructure'),
-('Orange', 'External disaster', 'Mass casulties, emergency service overload'),
-('Purple', 'Hostage taking', 'Person or group having control over other/-s with demands'),
-('Red', 'Fire, smoke', 'Destructive burning, possible casulties'),
-('Silver', 'Active attacker or shooter', 'Person or group carrying deadly weapons'),
-('White', 'Violent situation', 'Of any type'),
-('Yellow', 'Missing adult', 'Not know location, absence of adult'),
-('Amber', 'Mising child', 'Not know location, absence of child'),
-('Pink', 'Hightened situation', 'Any combinations of any codes');
+UPDATE contacts SET phoneNr=concat('+', phoneNr);
+
+INSERT INTO regions (region) VALUES
+('Riga'),
+('Vidzeme'),
+('Kurzeme'),
+('Zemgale'),
+('Latgale');
+
+INSERT INTO accidents (codeColor, accidentName, description, regionsId) VALUES
+('Aqua', 'Weather alert', 'Flood or any other natural disaster', 1),
+('Black', 'Threat, attack', 'Bomb threat, suspicious object, attack to entity or country', 2),
+('Blue', 'Public health', 'Cardiac arrest, medical emergency', 3),
+('Brown', 'Hazardous spill', 'Infectios, harmful substance leakage', 4),
+('Green', 'Evacuation', 'Facility, region', 5),
+('Grey', 'Infrastructure loss or failure', 'Electricity or any other infrastructure', 1),
+('Orange', 'External disaster', 'Mass casulties, emergency service overload', 2),
+('Purple', 'Hostage taking', 'Person or group having control over other/-s with demands', 3),
+('Red', 'Fire, smoke', 'Destructive burning, possible casulties', 4),
+('Silver', 'Active attacker or shooter', 'Person or group carrying deadly weapons', 5),
+('White', 'Violent situation', 'Of any type', 1),
+('Yellow', 'Missing adult', 'Not know location, absence of adult', 2),
+('Amber', 'Missing child', 'Not know location, absence of child', 3),
+('Pink', 'Heightened situation', 'Any combinations of any codes', 4);
 
 INSERT INTO users (username, password, name, email, phone) VALUES
 ('testUser', 'testUser', 'Test User', 'testUser@eas.com', 12345678);
 
--- display contact table
 SELECT * FROM contacts;
+SELECT * FROM accidents;
+SELECT * FROM regions;
 
--- display contact accident
-SELECT * FROM accident;
-
--- display contact users
-SELECT * FROM users;
-
--- get all phone nr from specific region
-SELECT * FROM contacts WHERE region = "Zemgale";
+SELECT phoneNr FROM contacts WHERE region = "Riga";
+SELECT * FROM contacts WHERE region = "Vidzeme";

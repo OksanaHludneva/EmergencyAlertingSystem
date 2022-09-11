@@ -10,7 +10,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController {
-
     @FXML
     private TextField usernameField;
     @FXML
@@ -43,5 +42,4 @@ public class LoginController {
     protected void onUserRegisterClick(ActionEvent actionEvent){
         SceneService.changeScene(actionEvent, "registerSecurityCode");
     }
-
 }
