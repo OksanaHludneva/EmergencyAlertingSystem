@@ -1,7 +1,6 @@
 package com.example.eas_finalproject.dotenv;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import io.github.cdimascio.dotenv.DotenvException;
 
 public class HandleDotenv {
 
@@ -20,4 +19,3 @@ public class HandleDotenv {
         );
     }
 }
-
