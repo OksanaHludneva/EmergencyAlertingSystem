@@ -36,5 +36,4 @@ public class SceneService {
         alert.setHeaderText(null);
         alert.showAndWait();
     }
-
 }

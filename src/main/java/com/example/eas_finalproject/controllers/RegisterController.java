@@ -46,7 +46,6 @@ public class RegisterController {
         }catch (Exception e) {
             SceneService.showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
         }
-
     }
 
     public void onUserRegisterClick(ActionEvent actionEvent) {

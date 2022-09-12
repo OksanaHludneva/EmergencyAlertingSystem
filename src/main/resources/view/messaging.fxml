@@ -26,18 +26,18 @@
     <CheckBox mnemonicParsing="false" text="Amber" GridPane.rowIndex="16" GridPane.columnIndex="1"/>
     <CheckBox mnemonicParsing="false" text="Pink" GridPane.rowIndex="17" GridPane.columnIndex="1"/>
 
-    <Label prefHeight="18.0" prefWidth="120.0" text="Choose impacted area" GridPane.columnIndex="5" GridPane.rowIndex="3" style="-fx-font-size: 20"/>
-    <CheckBox mnemonicParsing="false" text="Vidzeme" GridPane.rowIndex="4" GridPane.columnIndex="3" />
-    <CheckBox mnemonicParsing="false" text="Zemgale" GridPane.rowIndex="5" GridPane.columnIndex="3" />
-    <CheckBox mnemonicParsing="false" text="Kurzeme" GridPane.rowIndex="6" GridPane.columnIndex="3" />
-    <CheckBox mnemonicParsing="false" text="Latgale" GridPane.rowIndex="7" GridPane.columnIndex="3" />
+    <Label prefHeight="18.0" prefWidth="120.0" text="Choose impacted area" GridPane.columnIndex="3" GridPane.rowIndex="3" style="-fx-font-size: 20"/>
+    <CheckBox mnemonicParsing="false" text="Riga" GridPane.rowIndex="4" GridPane.columnIndex="3" />
+    <CheckBox mnemonicParsing="false" text="Vidzeme" GridPane.rowIndex="5" GridPane.columnIndex="3" />
+    <CheckBox mnemonicParsing="false" text="Zemgale" GridPane.rowIndex="6" GridPane.columnIndex="3" />
+    <CheckBox mnemonicParsing="false" text="Kurzeme" GridPane.rowIndex="7" GridPane.columnIndex="3" />
+    <CheckBox mnemonicParsing="false" text="Latgale" GridPane.rowIndex="8" GridPane.columnIndex="3" />
 
     <Label text="Enter message text" GridPane.rowIndex="11" GridPane.columnIndex="3" style="-fx-font-size: 20"/>
     <TextArea fx:id="messageTextField" GridPane.rowIndex="12" GridPane.columnIndex="3"/>
 
     <Button onAction="#sendMessageClick" GridPane.columnIndex="3" GridPane.rowIndex="18" prefHeight="26.0" prefWidth="125.0"
-            text="Send message" style="-fx-background-color: #d95924"/>
-    <Button onAction="#logoutClick"  GridPane.columnIndex="3" GridPane.rowIndex="19" prefHeight="26.0" prefWidth="125.0"
-            text="Logout" style="-fx-background-color: #5baeb7"/>
-
+            text="Send message" style="-fx-background-color: #d95924" />
+    <Button onAction="#logoutClick" GridPane.columnIndex="3" GridPane.rowIndex="19" prefHeight="26.0" prefWidth="125.0"
+            text="Logout" style="-fx-background-color: #5baeb7" />
 </GridPane>
