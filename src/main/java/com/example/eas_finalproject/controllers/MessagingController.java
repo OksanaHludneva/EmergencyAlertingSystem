@@ -1,6 +1,7 @@
 package com.example.eas_finalproject.controllers;
 
 import com.example.eas_finalproject.services.MessagingService;
+import com.example.eas_finalproject.services.SceneService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -20,5 +21,6 @@ public class MessagingController {
     }
 
     public void logoutClick(ActionEvent actionEvent) {
+        SceneService.changeScene(actionEvent, "login");
     }
 }
