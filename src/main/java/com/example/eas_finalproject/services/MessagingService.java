@@ -16,6 +16,8 @@ public class MessagingService {
 
     public void messagingRequest(String region, String alertType, String message) throws AuthenticationException {
 
+        System.out.println(region +"-"+ alertType +"-"+ message);
+
         ArrayList<String> phoneNr = new ArrayList();
 
         ContactsRepository contactsRepository = new ContactsRepository();

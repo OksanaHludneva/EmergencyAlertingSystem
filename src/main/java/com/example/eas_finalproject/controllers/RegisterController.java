@@ -82,7 +82,7 @@ public class RegisterController {
         if (user.getEmail().isEmpty()) throw new Exception("Please, enter  Email");
         if (!user.getEmail().contains("@")) throw new Exception("Please, enter valid Email");
         if (user.getPhone().isEmpty()) throw new Exception("Please, enter valid Phone Number");
-        if (user.getPhone().length() < 8) throw new Exception("Please, enter valid Phone Number");
+        //if (user.getPhone().length() >10) throw new Exception("Please, enter valid Phone Number in international format, eg +371...");
     }
 
     @FXML

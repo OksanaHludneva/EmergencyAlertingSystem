@@ -1,72 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<GridPane alignment="CENTER" hgap="10" prefHeight="600.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eas_finalproject.controllers.MessagingController">
-    <CheckBox mnemonicParsing="false" text="Riga" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-    <CheckBox mnemonicParsing="false" text="Vidzeme" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-    <CheckBox mnemonicParsing="false" text="Zemgale" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-    <CheckBox mnemonicParsing="false" text="Kurzeme" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-    <CheckBox mnemonicParsing="false" text="Latgale" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-
-    <Label style="-fx-font-size: 20" text="Enter message text" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-
-    <Button onAction="#sendMessageClick" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: #d95924" text="Send message" GridPane.columnIndex="2" GridPane.rowIndex="22" />
-    <Button onAction="#logoutClick" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: #5baeb7" text="Logout" GridPane.columnIndex="2" GridPane.rowIndex="23" />
-   <Label prefHeight="30.0" prefWidth="286.0" text="Choose alerting type" GridPane.columnIndex="1" GridPane.rowIndex="5">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Label>
-   <Label prefHeight="30.0" prefWidth="287.0" text="MENU" GridPane.columnIndex="1" GridPane.rowIndex="1">
-      <font>
-         <Font size="20.0" />
-      </font>
-   </Label>
-   <Label text="Choose impacted area" GridPane.columnIndex="2" GridPane.rowIndex="5">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Label>
-   <TextArea maxWidth="-Infinity" prefHeight="92.0" prefWidth="278.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
-   <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-   <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-
-
-   <ComboBox prefHeight="26.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="7"
-           value="Enter choice">
+<GridPane alignment="CENTER" hgap="10" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #b4b4b1" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.eas_finalproject.controllers.MessagingController">
+   <Label text="Alerting type" prefHeight="30.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="11" style="-fx-font-size: 20"/>
+   <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+   <ComboBox fx:id="comboBox" prefHeight="26.0" prefWidth="294.0" value="Choose type" GridPane.columnIndex="1" GridPane.rowIndex="13">
       <items>
          <FXCollections fx:factory="observableArrayList">
-            <String fx:value="Weather alert"/>
-            <String fx:value="Threat, attack"/>
-            <String fx:value="Public health"/>
-            <String fx:value="Hazardous spill"/>
-            <String fx:value="Evacuation"/>
-            <String fx:value="Infrastructure loss or failure"/>
-            <String fx:value="External disaster"/>
-            <String fx:value="Hostage taking"/>
-            <String fx:value="Fire, smoke"/>
-            <String fx:value="Active attacker or shooter"/>
-            <String fx:value="Violent situation"/>
-            <String fx:value="Missing adult"/>
-            <String fx:value="Missing child"/>
-            <String fx:value="Heightened situation"/>
+            <String fx:value="Weather alert" />
+            <String fx:value="Threat, attack" />
+            <String fx:value="Public health" />
+            <String fx:value="Hazardous spill" />
+            <String fx:value="Evacuation" />
+            <String fx:value="Infrastructure loss or failure" />
+            <String fx:value="External disaster" />
+            <String fx:value="Hostage taking" />
+            <String fx:value="Fire, smoke" />
+            <String fx:value="Active attacker or shooter" />
+            <String fx:value="Violent situation" />
+            <String fx:value="Missing adult" />
+            <String fx:value="Missing child" />
+            <String fx:value="Heightened situation" />
          </FXCollections>
       </items>
    </ComboBox>
 
+   <Label text="Choose impacted area" GridPane.columnIndex="2" GridPane.rowIndex="11" style="-fx-font-size: 20"/>
+   <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+   <CheckBox fx:id="checkBoxRiga" mnemonicParsing="false" text="Riga" GridPane.columnIndex="2" GridPane.rowIndex="13" GridPane.valignment="BOTTOM" />
+   <CheckBox fx:id="checkBoxVidzeme" mnemonicParsing="false" text="Vidzeme" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+   <CheckBox fx:id="checkBoxZemgale" mnemonicParsing="false" text="Zemgale" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+   <CheckBox fx:id="checkBoxKurzeme" mnemonicParsing="false" text="Kurzeme" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+   <CheckBox fx:id="checkBoxLatgale" mnemonicParsing="false" text="Latgale" GridPane.columnIndex="2" GridPane.rowIndex="17" />
 
+   <Label text="Enter message text" GridPane.columnIndex="2" GridPane.rowIndex="20" style="-fx-font-size: 20"/>
+   <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+   <TextArea fx:id="messageTextField" maxWidth="-Infinity" prefHeight="92.0" prefWidth="278.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+
+   <Button onAction="#sendMessageClick" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: #f6bd16" text="Send message" GridPane.columnIndex="2" GridPane.rowIndex="28" />
+   <Button onAction="#logoutClick" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: #cccb6a" text="Logout" GridPane.columnIndex="2" GridPane.rowIndex="29" />
+
+   <ImageView fitHeight="74.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <image>
+         <Image url="@../Warning.jpg" />
+      </image>
+   </ImageView>
 
    <columnConstraints>
       <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
@@ -74,8 +66,14 @@
       <ColumnConstraints maxWidth="439.9999755859375" minWidth="253.59995117187498" prefWidth="312.7999633789062" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
