@@ -7,6 +7,7 @@ module com.example.eas_finalproject {
     requires twilio;
     requires org.slf4j;
     requires dotenv.java;
+    requires mysql.connector.java;
 
     opens com.example.eas_finalproject to javafx.fxml;
     exports com.example.eas_finalproject;

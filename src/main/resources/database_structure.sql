@@ -1,9 +1,3 @@
--- DROP DATABASE IF EXISTS eas;
--- DROP TABLE IF EXISTS accidents;
--- DROP TABLE IF EXISTS contacts;
--- DROP TABLE IF EXISTS regions;
--- DROP TABLE IF EXISTS users;
-
 SET GLOBAL time_zone = '+2:00';
 SET SQL_SAFE_UPDATES = 0;
 
@@ -13,7 +7,7 @@ USE java2728_eas;
 
 CREATE TABLE IF NOT EXISTS contacts (
     id INT NOT NULL AUTO_INCREMENT,
-    phoneNr VARCHAR(20) NOT NULL UNIQUE,
+    phoneNr VARCHAR(20) NOT NULL,
     region VARCHAR (50) NOT NULL,
     createdAt timestamp default current_timestamp,
     updatedAt timestamp default current_timestamp on update current_timestamp,
@@ -43,13 +37,29 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR (200) NOT NULL,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    phone VARCHAR(20) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL,
     primary key (id)
 );
 
 INSERT INTO contacts (phoneNr, region) VALUES
 (+37129663132, 'Riga'),
 (+37126311662, 'Riga');
+
+INSERT INTO contacts (phoneNr, region) VALUES
+(+37129663132, 'Vidzeme'),
+(+37126311662, 'Vidzeme');
+
+INSERT INTO contacts (phoneNr, region) VALUES
+(+37129663132, 'Kurzeme'),
+(+37126311662, 'Kurzeme');
+
+INSERT INTO contacts (phoneNr, region) VALUES
+(+37129663132, 'Zemgale'),
+(+37126311662, 'Zemgale');
+
+INSERT INTO contacts (phoneNr, region) VALUES
+(+37129663132, 'Latgale'),
+(+37126311662, 'Latgale');
 
 UPDATE contacts SET phoneNr=concat('+', phoneNr);
 

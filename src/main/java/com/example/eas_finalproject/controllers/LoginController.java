@@ -28,7 +28,7 @@ public class LoginController {
             DataRepository.getInstance().setLoggedInUserId(userId);
             SceneService.showAlert(
                     "Login success",
-                    "User with id " + userId + " LoggedIn successfully",
+                    "LoggedIn successfully",
                     Alert.AlertType.CONFIRMATION
             );
             DataRepository.getInstance().setLoggedInUserId(userId);

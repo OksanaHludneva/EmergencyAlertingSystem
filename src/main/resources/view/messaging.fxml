@@ -21,25 +21,25 @@
    <ComboBox fx:id="comboBox" prefHeight="26.0" prefWidth="294.0" value="Choose type" GridPane.columnIndex="1" GridPane.rowIndex="13">
       <items>
          <FXCollections fx:factory="observableArrayList">
-            <String fx:value="Weather alert" />
-            <String fx:value="Threat, attack" />
-            <String fx:value="Public health" />
-            <String fx:value="Hazardous spill" />
-            <String fx:value="Evacuation" />
-            <String fx:value="Infrastructure loss or failure" />
-            <String fx:value="External disaster" />
-            <String fx:value="Hostage taking" />
-            <String fx:value="Fire, smoke" />
-            <String fx:value="Active attacker or shooter" />
-            <String fx:value="Violent situation" />
-            <String fx:value="Missing adult" />
-            <String fx:value="Missing child" />
-            <String fx:value="Heightened situation" />
+            <String fx:id="weatherAlert" fx:value="Weather alert" />
+            <String fx:id="threatAttack" fx:value="Threat, attack" />
+            <String fx:id="publicHealth" fx:value="Public health" />
+            <String fx:id="hazardousSpill" fx:value="Hazardous spill" />
+            <String fx:id="evacuation" fx:value="Evacuation" />
+            <String fx:id="infrastructureLossOrFailure" fx:value="Infrastructure loss or failure" />
+            <String fx:id="externalDisaster" fx:value="External disaster" />
+            <String fx:id="hostageTaking" fx:value="Hostage taking" />
+            <String fx:id="fireSmoke" fx:value="Fire, smoke" />
+            <String fx:id="activeAttackerOrShooter" fx:value="Active attacker or shooter" />
+            <String fx:id="violentSituation" fx:value="Violent situation" />
+            <String fx:id="missingAdult" fx:value="Missing adult" />
+            <String fx:id="missingChild" fx:value="Missing child" />
+            <String fx:id="heightenedSituation" fx:value="Heightened situation" />
          </FXCollections>
       </items>
    </ComboBox>
 
-   <Label text="Choose impacted area" GridPane.columnIndex="2" GridPane.rowIndex="11" style="-fx-font-size: 20"/>
+   <Label text="Impacted area" GridPane.columnIndex="2" GridPane.rowIndex="11" style="-fx-font-size: 20"/>
    <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
    <CheckBox fx:id="checkBoxRiga" mnemonicParsing="false" text="Riga" GridPane.columnIndex="2" GridPane.rowIndex="13" GridPane.valignment="BOTTOM" />
    <CheckBox fx:id="checkBoxVidzeme" mnemonicParsing="false" text="Vidzeme" GridPane.columnIndex="2" GridPane.rowIndex="14" />
