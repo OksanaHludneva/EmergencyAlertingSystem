@@ -1,3 +1,9 @@
+-- DROP DATABASE IF EXISTS java2728_eas;
+-- DROP TABLE IF EXISTS accidents;
+-- DROP TABLE IF EXISTS contacts;
+-- DROP TABLE IF EXISTS regions;
+-- DROP TABLE IF EXISTS users;
+
 SET GLOBAL time_zone = '+2:00';
 SET SQL_SAFE_UPDATES = 0;
 
@@ -42,22 +48,30 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO contacts (phoneNr, region) VALUES
+-- (+371, 'Riga'),
+-- (+371, 'Riga'),
+-- (+371, 'Vidzeme'),
+-- (+371, 'Vidzeme'),
+-- (+371, 'Kurzeme'),
+-- (+371, 'Kurzeme'),
+-- (+371, 'Zemgale'),
+-- (+371, 'Zemgale'),
+-- (+371, 'Latgale'),
+-- (+371, 'Latgale'),
+
 (+37129663132, 'Riga'),
-(+37126311662, 'Riga');
+(+37126311662, 'Riga'),
 
-INSERT INTO contacts (phoneNr, region) VALUES
 (+37129663132, 'Vidzeme'),
-(+37126311662, 'Vidzeme');
+(+4072134900, 'Vidzeme'),
+(+37126311662, 'Vidzeme'),
 
-INSERT INTO contacts (phoneNr, region) VALUES
 (+37129663132, 'Kurzeme'),
-(+37126311662, 'Kurzeme');
+(+37126311662, 'Kurzeme'),
 
-INSERT INTO contacts (phoneNr, region) VALUES
 (+37129663132, 'Zemgale'),
-(+37126311662, 'Zemgale');
+(+37126311662, 'Zemgale'),
 
-INSERT INTO contacts (phoneNr, region) VALUES
 (+37129663132, 'Latgale'),
 (+37126311662, 'Latgale');
 
