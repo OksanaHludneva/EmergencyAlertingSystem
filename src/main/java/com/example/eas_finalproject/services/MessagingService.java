@@ -16,8 +16,6 @@ public class MessagingService {
 
     public void messagingRequest(String region, String alertType, String message) throws AuthenticationException {
 
-        System.out.println(region +" - "+ alertType +" - "+ message);
-
         ArrayList<String> phoneNr = new ArrayList();
 
         ContactsRepository contactsRepository = new ContactsRepository();
@@ -37,7 +35,7 @@ public class MessagingService {
 
             Notification notification = Notification
                     .creator(SERVICE_SID)
-                    .setBody(alertType + ": " + message)
+                    .setBody(alertType + ": \n" + message)
                     .setToBinding(toBindings)
                     .create();
 
