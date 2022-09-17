@@ -31,7 +31,7 @@
     <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
     <Label text="Enter Phone Number" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <TextField fx:id="phoneField" onAction="#onEnterPressedPhoneNrFilledProfileRegistration" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
     <Button onAction="#onUserRegisterClick" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #f6bd16" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="9" />
     <Button onAction="#onUserLoginClick" style="-fx-background-color: #cccb6a" text="Existing user? Login" GridPane.columnIndex="1" GridPane.rowIndex="10" />

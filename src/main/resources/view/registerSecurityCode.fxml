@@ -15,7 +15,7 @@
     <Text text="SECURITY CODE CONFIRMATION" GridPane.rowIndex="0" GridPane.columnIndex="3" style="-fx-font-size: 20px;"/>
 
     <Label fx:id="securityCodeLabel" text="Enter provided security code" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-    <PasswordField fx:id="securityCodeField" GridPane.rowIndex="2" GridPane.columnIndex="3" style="-fx-font-size: 12"/>
+    <PasswordField fx:id="securityCodeField" onAction="#onEnterPressedSecurityCode" GridPane.rowIndex="2" GridPane.columnIndex="3" style="-fx-font-size: 12"/>
     <Button onAction="#confirmSecurityCode" GridPane.rowIndex="3" GridPane.columnIndex="3" text="Confirm" style="-fx-font-size: 12; -fx-background-color: #f6bd16"/>
 
 </GridPane>
