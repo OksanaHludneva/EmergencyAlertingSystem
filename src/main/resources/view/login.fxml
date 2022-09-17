@@ -21,7 +21,7 @@
     <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="161.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
     <Label text="Enter your password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+    <PasswordField fx:id="passwordField" onAction="#onEnterPressed" GridPane.columnIndex="2" GridPane.rowIndex="6" />
 
     <Button onAction="#onUserLoginClick" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #f6bd16" text="Login" GridPane.columnIndex="2" GridPane.rowIndex="7" />
     <Button onAction="#onUserRegisterClick" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #cccb6a" text="Register" GridPane.columnIndex="2" GridPane.rowIndex="8" />
