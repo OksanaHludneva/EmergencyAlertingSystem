@@ -5,8 +5,6 @@ module com.example.eas_finalproject {
     requires java.sql;
     requires commons.configuration;
     requires twilio;
-    requires org.slf4j;
-    requires dotenv.java;
     requires mysql.connector.java;
 
     opens com.example.eas_finalproject to javafx.fxml;

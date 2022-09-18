@@ -1,5 +1,6 @@
 package com.example.eas_finalproject.controllers;
 
+import com.example.eas_finalproject.repository.DataRepository;
 import com.example.eas_finalproject.services.MessagingService;
 import com.example.eas_finalproject.services.SceneService;
 import javafx.event.ActionEvent;
@@ -29,29 +30,28 @@ public class MessagingController  {
             MessagingService messagingService = new MessagingService();
 
             String selectedComboBoxAlert = comboBox.getValue();
-
             String message = messageTextField.getText();
 
             String selectedCheckBoxRegionRiga = checkBoxRiga.getText();
             boolean isSelectedRiga = checkBoxRiga.isSelected();
                 if(isSelectedRiga == true){
-                    messagingService.messagingRequest(selectedCheckBoxRegionRiga, selectedComboBoxAlert, message);}
+                    messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionRiga, message);}
 
             String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
             boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
-                if(isSelectedVidzeme == true){messagingService.messagingRequest(selectedCheckBoxRegionVidzeme, selectedComboBoxAlert, message);}
+                if(isSelectedVidzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
 
             String selectedCheckBoxRegionKurzeme = checkBoxKurzeme.getText();
             boolean isSelectedKurzeme = checkBoxKurzeme.isSelected();
-                if(isSelectedKurzeme == true){messagingService.messagingRequest(selectedCheckBoxRegionKurzeme, selectedComboBoxAlert, message);}
+                if(isSelectedKurzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionKurzeme, message);}
 
             String selectedCheckBoxRegionZemgale = checkBoxZemgale.getText();
             boolean isSelectedZemgale = checkBoxZemgale.isSelected();
-                if(isSelectedZemgale == true){messagingService.messagingRequest(selectedCheckBoxRegionZemgale, selectedComboBoxAlert, message);}
+                if(isSelectedZemgale == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionZemgale, message);}
 
             String selectedCheckBoxRegionLatgale = checkBoxLatgale.getText();
             boolean isSelectedLatgale = checkBoxLatgale.isSelected();
-                if(isSelectedLatgale == true){messagingService.messagingRequest(selectedCheckBoxRegionLatgale, selectedComboBoxAlert, message);}
+                if(isSelectedLatgale == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionLatgale, message);}
 
 
         }catch (Exception e) {
