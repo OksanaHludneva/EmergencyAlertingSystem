@@ -32,33 +32,39 @@ public class MessagingController  {
             String selectedComboBoxAlert = comboBox.getValue();
             String message = messageTextField.getText();
 
-            String selectedCheckBoxRegionRiga = checkBoxRiga.getText();
-            boolean isSelectedRiga = checkBoxRiga.isSelected();
-                if(isSelectedRiga == true){
-                    messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionRiga, message);}
-
-            String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
-            boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
-                if(isSelectedVidzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
-
-            String selectedCheckBoxRegionKurzeme = checkBoxKurzeme.getText();
-            boolean isSelectedKurzeme = checkBoxKurzeme.isSelected();
-                if(isSelectedKurzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionKurzeme, message);}
-
-            String selectedCheckBoxRegionZemgale = checkBoxZemgale.getText();
-            boolean isSelectedZemgale = checkBoxZemgale.isSelected();
-                if(isSelectedZemgale == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionZemgale, message);}
-
-            String selectedCheckBoxRegionLatgale = checkBoxLatgale.getText();
-            boolean isSelectedLatgale = checkBoxLatgale.isSelected();
-                if(isSelectedLatgale == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionLatgale, message);}
-
+            checkBoxDetails(messagingService, selectedComboBoxAlert, message,
+                    checkBoxKurzeme, checkBoxZemgale, checkBoxLatgale, checkBoxRiga, checkBoxVidzeme);
 
         }catch (Exception e) {
             return "Error in sending message";
         }
-
         return null;
+    }
+
+    private void checkBoxDetails(MessagingService messagingService, String selectedComboBoxAlert, String message, CheckBox checkBoxKurzeme, CheckBox checkBoxZemgale, CheckBox checkBoxLatgale, CheckBox checkBoxRiga, CheckBox checkBoxVidzeme) {
+        String selectedCheckBoxRegionKurzeme = checkBoxKurzeme.getText();
+        boolean isSelectedKurzeme = checkBoxKurzeme.isSelected();
+        if(isSelectedKurzeme == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionKurzeme, message);}
+
+        String selectedCheckBoxRegionZemgale = checkBoxZemgale.getText();
+        boolean isSelectedZemgale = checkBoxZemgale.isSelected();
+        if(isSelectedZemgale == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionZemgale, message);}
+
+        String selectedCheckBoxRegionLatgale = checkBoxLatgale.getText();
+        boolean isSelectedLatgale = checkBoxLatgale.isSelected();
+        if(isSelectedLatgale == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionLatgale, message);}
+
+        String selectedCheckBoxRegionRiga = checkBoxRiga.getText();
+        boolean isSelectedRiga = checkBoxRiga.isSelected();
+        if(isSelectedRiga == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionRiga, message);}
+
+        String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
+        boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
+        if(isSelectedVidzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
     }
 
     public void logoutClick(ActionEvent actionEvent) {
