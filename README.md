@@ -8,14 +8,14 @@ In order to be able to create the same idea you will need a Twilio platform acco
 
 The following functionality was developed in the App:
 
-• Sender's registration in the system;
-• Registration process protection with a security code;
-• Sender's login the system;
-• 14 alert types to use depending on a threatening situation;
-• 5 available regions to send SMS, separately or all together across the country;
-• SMS area field for text message creating, editing and deleting;
-• Send message button to execute the request;
-• Notification request number availability for each SMS batch sent to check delivery status inside Twilio platform;
+• Sender's registration in the system
+• Registration process protection with a security code
+• Sender's login the system
+• 14 alert types to use depending on a threatening situation
+• 5 available regions to send SMS, separately or all together across the country
+• SMS area field for text message creating, editing and deleting
+• Send message button to execute the request
+• Notification request number availability for each SMS batch sent to check delivery status inside Twilio platform
 • Log out button to exit the application.
 
 Project screenshots:
