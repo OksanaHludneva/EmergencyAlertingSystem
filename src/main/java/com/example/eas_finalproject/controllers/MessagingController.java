@@ -32,8 +32,8 @@ public class MessagingController  {
             String selectedComboBoxAlert = comboBox.getValue();
             String message = messageTextField.getText();
 
-            checkBoxDetails(messagingService, selectedComboBoxAlert, message,
-                    checkBoxKurzeme, checkBoxZemgale, checkBoxLatgale, checkBoxRiga, checkBoxVidzeme);
+            checkBoxDetails(messagingService, selectedComboBoxAlert,
+                    checkBoxKurzeme, checkBoxZemgale, checkBoxLatgale, checkBoxRiga, checkBoxVidzeme, message);
 
         }catch (Exception e) {
             return "Error in sending message";
@@ -41,7 +41,9 @@ public class MessagingController  {
         return null;
     }
 
-    private void checkBoxDetails(MessagingService messagingService, String selectedComboBoxAlert, String message, CheckBox checkBoxKurzeme, CheckBox checkBoxZemgale, CheckBox checkBoxLatgale, CheckBox checkBoxRiga, CheckBox checkBoxVidzeme) {
+    private void checkBoxDetails(MessagingService messagingService, String selectedComboBoxAlert,
+                                 CheckBox checkBoxKurzeme, CheckBox checkBoxZemgale, CheckBox checkBoxLatgale,
+                                 CheckBox checkBoxRiga, CheckBox checkBoxVidzeme, String message) {
         String selectedCheckBoxRegionKurzeme = checkBoxKurzeme.getText();
         boolean isSelectedKurzeme = checkBoxKurzeme.isSelected();
         if(isSelectedKurzeme == true){
@@ -64,7 +66,8 @@ public class MessagingController  {
 
         String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
         boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
-        if(isSelectedVidzeme == true){messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
+        if(isSelectedVidzeme == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
     }
 
     public void logoutClick(ActionEvent actionEvent) {
