@@ -1,7 +1,8 @@
 We are happy to present you our final project on completing JAVA Advanced Bootcamp.
 
-Emergency Alerting System is covering whole country territory alerting people via SMS about certain life threatening situations (e.g. natural disasters, AMBER alerts, public health threats, etc.), who are registered in a certain region. Twilio programmable communication platform is integrated in the App to support SMS sending functionality.
+Emergency Alerting System is covering whole country territory alerting people via SMS about certain life threatening situations (e.g. natural disasters, AMBER alerts, public health threats, etc.), who are registered in a certain region. 
 
+The application is based on Twilio programmable communication platform which is integrated in the App to support SMS sending functionality.
 Front end features were developed using JavaFX, MySQL was used for storing recipients' phone numbers and Twilio platform for back end part allowing to send SMS.
 
 In order to be able to create the same idea you will need a Twilio platform account with account SID and authentication token that are highly recommended to hide using environment variables or .env file.
