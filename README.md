@@ -6,7 +6,7 @@ Front end features were developed using JavaFX, MySQL was used for storing recip
 
 In order to be able to create the same idea you will need a Twilio platform account with account SID and authentication token that are highly recommended to hide using environment variables or .env file.
 
-The following functionality was developed in the App using:
+The following functionality was developed in the App:
 
 • Sender's registration in the system;
 • Registration process protection with a security code;
