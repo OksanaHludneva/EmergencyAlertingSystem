@@ -6,7 +6,6 @@ import com.twilio.exception.ApiException;
 import com.twilio.exception.AuthenticationException;
 import com.twilio.rest.notify.v1.service.Notification;
 import javafx.scene.control.Alert;
-
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;

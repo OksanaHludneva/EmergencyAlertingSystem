@@ -134,5 +134,9 @@ public class RegisterController {
 
         }
     }
+
+    public void goBack(ActionEvent actionEvent) {
+        SceneService.changeScene(actionEvent, "login");
+    }
 }
 
