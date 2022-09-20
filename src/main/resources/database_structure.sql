@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS regions (
 
 CREATE TABLE IF NOT EXISTS accidents (
     id INT NOT NULL AUTO_INCREMENT,
-    codeColor VARCHAR (50) NOT NULL,
     accidentName VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
     messageText VARCHAR (200),
@@ -63,7 +62,6 @@ INSERT INTO contacts (phoneNr, region) VALUES
 (+37126311662, 'Riga'),
 
 (+37129663132, 'Vidzeme'),
-(+4072134900, 'Vidzeme'),
 (+37126311662, 'Vidzeme'),
 
 (+37129663132, 'Kurzeme'),
@@ -84,21 +82,21 @@ INSERT INTO regions (region) VALUES
 ('Zemgale'),
 ('Latgale');
 
-INSERT INTO accidents (codeColor, accidentName, description, regionsId) VALUES
-('Aqua', 'Weather alert', 'Flood or any other natural disaster', 1),
-('Black', 'Threat, attack', 'Bomb threat, suspicious object, attack to entity or country', 2),
-('Blue', 'Public health', 'Cardiac arrest, medical emergency', 3),
-('Brown', 'Hazardous spill', 'Infectios, harmful substance leakage', 4),
-('Green', 'Evacuation', 'Facility, region', 5),
-('Grey', 'Infrastructure loss or failure', 'Electricity or any other infrastructure', 1),
-('Orange', 'External disaster', 'Mass casulties, emergency service overload', 2),
-('Purple', 'Hostage taking', 'Person or group having control over other/-s with demands', 3),
-('Red', 'Fire, smoke', 'Destructive burning, possible casulties', 4),
-('Silver', 'Active attacker or shooter', 'Person or group carrying deadly weapons', 5),
-('White', 'Violent situation', 'Of any type', 1),
-('Yellow', 'Missing adult', 'Not know location, absence of adult', 2),
-('Amber', 'Missing child', 'Not know location, absence of child', 3),
-('Pink', 'Heightened situation', 'Any combinations of any codes', 4);
+INSERT INTO accidents (accidentName, description, regionsId) VALUES
+('Weather alert', 'Flood or any other natural disaster', 1),
+('Threat, attack', 'Bomb threat, suspicious object, attack to entity or country', 2),
+('Public health', 'Cardiac arrest, medical emergency', 3),
+('Hazardous spill', 'Infectios, harmful substance leakage', 4),
+('Evacuation', 'Facility, region', 5),
+('Infrastructure loss or failure', 'Electricity or any other infrastructure', 1),
+('External disaster', 'Mass casulties, emergency service overload', 2),
+('Hostage taking', 'Person or group having control over other/-s with demands', 3),
+('Fire, smoke', 'Destructive burning, possible casulties', 4),
+('Active attacker or shooter', 'Person or group carrying deadly weapons', 5),
+('Violent situation', 'Of any type', 1),
+('Missing adult', 'Not know location, absence of adult', 2),
+('Missing child', 'Not know location, absence of child', 3),
+('Heightened situation', 'Any combinations of any codes', 4);
 
 INSERT INTO users (username, password, name, email, phone) VALUES
 ('testUser', 'testUser', 'Test User', 'testUser@eas.com', 12345678);
