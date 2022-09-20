@@ -1,9 +1,3 @@
--- DROP DATABASE IF EXISTS java2728_eas;
--- DROP TABLE IF EXISTS accidents;
--- DROP TABLE IF EXISTS contacts;
--- DROP TABLE IF EXISTS regions;
--- DROP TABLE IF EXISTS users;
-
 SET GLOBAL time_zone = '+2:00';
 SET SQL_SAFE_UPDATES = 0;
 
@@ -46,33 +40,6 @@ CREATE TABLE IF NOT EXISTS users (
     primary key (id)
 );
 
-INSERT INTO contacts (phoneNr, region) VALUES
--- (+371, 'Riga'),
--- (+371, 'Riga'),
--- (+371, 'Vidzeme'),
--- (+371, 'Vidzeme'),
--- (+371, 'Kurzeme'),
--- (+371, 'Kurzeme'),
--- (+371, 'Zemgale'),
--- (+371, 'Zemgale'),
--- (+371, 'Latgale'),
--- (+371, 'Latgale'),
-
-(+37129663132, 'Riga'),
-(+37126311662, 'Riga'),
-
-(+37129663132, 'Vidzeme'),
-(+37126311662, 'Vidzeme'),
-
-(+37129663132, 'Kurzeme'),
-(+37126311662, 'Kurzeme'),
-
-(+37129663132, 'Zemgale'),
-(+37126311662, 'Zemgale'),
-
-(+37129663132, 'Latgale'),
-(+37126311662, 'Latgale');
-
 UPDATE contacts SET phoneNr=concat('+', phoneNr);
 
 INSERT INTO regions (region) VALUES
@@ -100,10 +67,3 @@ INSERT INTO accidents (accidentName, description, regionsId) VALUES
 
 INSERT INTO users (username, password, name, email, phone) VALUES
 ('testUser', 'testUser', 'Test User', 'testUser@eas.com', 12345678);
-
-SELECT * FROM contacts;
-SELECT * FROM accidents;
-SELECT * FROM regions;
-
-SELECT phoneNr FROM contacts WHERE region = "Riga";
-SELECT * FROM contacts WHERE region = "Vidzeme";
