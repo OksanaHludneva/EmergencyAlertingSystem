@@ -1,6 +1,5 @@
 package com.example.eas_finalproject.controllers;
 
-import com.example.eas_finalproject.repository.DataRepository;
 import com.example.eas_finalproject.services.MessagingService;
 import com.example.eas_finalproject.services.SceneService;
 import javafx.event.ActionEvent;
@@ -21,10 +20,10 @@ public class MessagingController  {
     @FXML
     CheckBox checkBoxLatgale = new CheckBox();
     @FXML
-    ComboBox<String>comboBox = new ComboBox();
+    ComboBox<String>comboBox = new ComboBox<>();
 
     @FXML
-    public String sendMessageClick(ActionEvent actionEvent) throws Exception {
+    public String sendMessageClick(ActionEvent actionEvent) {
 
         try {
             MessagingService messagingService = new MessagingService();
@@ -33,7 +32,7 @@ public class MessagingController  {
             String message = messageTextField.getText();
 
             checkBoxDetails(messagingService, selectedComboBoxAlert,
-                    checkBoxKurzeme, checkBoxZemgale, checkBoxLatgale, checkBoxRiga, checkBoxVidzeme, message);
+                    checkBoxRiga, checkBoxVidzeme, checkBoxKurzeme, checkBoxZemgale, checkBoxLatgale, message);
 
         }catch (Exception e) {
             return "Error in sending message";
@@ -42,8 +41,18 @@ public class MessagingController  {
     }
 
     private void checkBoxDetails(MessagingService messagingService, String selectedComboBoxAlert,
-                                 CheckBox checkBoxKurzeme, CheckBox checkBoxZemgale, CheckBox checkBoxLatgale,
-                                 CheckBox checkBoxRiga, CheckBox checkBoxVidzeme, String message) {
+                                 CheckBox checkBoxRiga, CheckBox checkBoxVidzeme, CheckBox checkBoxKurzeme,
+                                 CheckBox checkBoxZemgale, CheckBox checkBoxLatgale, String message) {
+        String selectedCheckBoxRegionRiga = checkBoxRiga.getText();
+        boolean isSelectedRiga = checkBoxRiga.isSelected();
+        if(isSelectedRiga == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionRiga, message);}
+
+        String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
+        boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
+        if(isSelectedVidzeme == true){
+            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
+
         String selectedCheckBoxRegionKurzeme = checkBoxKurzeme.getText();
         boolean isSelectedKurzeme = checkBoxKurzeme.isSelected();
         if(isSelectedKurzeme == true){
@@ -58,16 +67,6 @@ public class MessagingController  {
         boolean isSelectedLatgale = checkBoxLatgale.isSelected();
         if(isSelectedLatgale == true){
             messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionLatgale, message);}
-
-        String selectedCheckBoxRegionRiga = checkBoxRiga.getText();
-        boolean isSelectedRiga = checkBoxRiga.isSelected();
-        if(isSelectedRiga == true){
-            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionRiga, message);}
-
-        String selectedCheckBoxRegionVidzeme = checkBoxVidzeme.getText();
-        boolean isSelectedVidzeme = checkBoxVidzeme.isSelected();
-        if(isSelectedVidzeme == true){
-            messagingService.messagingRequest(selectedComboBoxAlert, selectedCheckBoxRegionVidzeme, message);}
     }
 
     public void logoutClick(ActionEvent actionEvent) {

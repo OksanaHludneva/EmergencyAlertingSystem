@@ -14,8 +14,6 @@ import javafx.scene.input.KeyCode;
 public class RegisterController {
 
     public PasswordField securityCodeField;
-
-    public Integer id;
     public TextField usernameField;
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
@@ -25,7 +23,7 @@ public class RegisterController {
     private UserService userService = new UserService();
 
     @FXML
-    public void confirmSecurityCode(ActionEvent actionEvent) throws Exception {
+    public void confirmSecurityCode(ActionEvent actionEvent) {
 
         securityCodeDetails(actionEvent);
     }
@@ -43,7 +41,6 @@ public class RegisterController {
         if (user.getEmail().isEmpty()) throw new Exception("Please, enter  Email");
         if (!user.getEmail().contains("@")) throw new Exception("Please, enter valid Email");
         if (user.getPhone().isEmpty()) throw new Exception("Please, enter valid Phone Number");
-        //if (user.getPhone().length() >10) throw new Exception("Please, enter valid Phone Number in international format, eg +371...");
     }
 
     @FXML
@@ -53,7 +50,7 @@ public class RegisterController {
     }
 
     @FXML
-    public void onEnterPressedSecurityCode(ActionEvent actionEvent) throws Exception {
+    public void onEnterPressedSecurityCode(ActionEvent actionEvent) {
 
         try {
             securityCodeDetails(actionEvent);
@@ -94,7 +91,7 @@ public class RegisterController {
         }
     }
     @FXML
-    public void onEnterPressedPhoneNrFilledProfileRegistration(ActionEvent actionEvent) throws Exception {
+    public void onEnterPressedPhoneNrFilledProfileRegistration(ActionEvent actionEvent) {
 
         try {
             profileRegistrationDetails(actionEvent);
@@ -116,7 +113,6 @@ public class RegisterController {
                     null,
                     usernameField.getText(),
                     passwordField.getText(),
-                    //confirmPasswordField.getText(),
                     nameField.getText(),
                     emailField.getText(),
                     phoneField.getText()

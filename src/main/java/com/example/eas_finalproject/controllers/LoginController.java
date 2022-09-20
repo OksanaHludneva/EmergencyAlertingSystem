@@ -4,12 +4,9 @@ import com.example.eas_finalproject.repository.DataRepository;
 import com.example.eas_finalproject.services.SceneService;
 import com.example.eas_finalproject.services.UserService;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-
 
 public class LoginController {
     @FXML
