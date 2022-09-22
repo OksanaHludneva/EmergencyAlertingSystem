@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS contacts (
 );
 
 CREATE TABLE IF NOT EXISTS regions (
-	id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     region varchar(50) NOT NULL,
     primary key (id)
 );
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS accidents (
 );
 
 CREATE TABLE IF NOT EXISTS users (
-	id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR (200) NOT NULL,
     name VARCHAR(100) NOT NULL,
@@ -39,6 +39,10 @@ CREATE TABLE IF NOT EXISTS users (
     phone VARCHAR(20) NOT NULL,
     primary key (id)
 );
+
+INSERT INTO contacts (phoneNr, region) VALUES 
+(+371, 'Riga'),
+(+371, 'Riga');
 
 UPDATE contacts SET phoneNr=concat('+', phoneNr);
 
