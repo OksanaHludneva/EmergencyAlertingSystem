@@ -29,6 +29,4 @@
       <RowConstraints />
       <RowConstraints />
    </rowConstraints>
-
-
 </GridPane>
