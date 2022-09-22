@@ -10,9 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 
-
 public class RegisterController {
-
     public PasswordField securityCodeField;
     public TextField usernameField;
     public PasswordField passwordField;
@@ -24,7 +22,6 @@ public class RegisterController {
 
     @FXML
     public void confirmSecurityCode(ActionEvent actionEvent) {
-
         securityCodeDetails(actionEvent);
     }
 
@@ -35,7 +32,7 @@ public class RegisterController {
     private void validateUser(User user) throws Exception{
 
         if (user.getUsername().length() < 4) throw new Exception("Username should be minimum 4 characters");
-        if (!user.getPassword().equals(confirmPasswordField.getText())) throw new Exception("Password doesnt match");
+        if (!user.getPassword().equals(confirmPasswordField.getText())) throw new Exception("Password does not match");
         if (user.getPassword().length() < 4) throw new Exception("Password should be minimum 4 characters");
         if (user.getName().isEmpty()) throw new Exception("Please, provide Name");
         if (user.getEmail().isEmpty()) throw new Exception("Please, enter  Email");
@@ -45,7 +42,6 @@ public class RegisterController {
 
     @FXML
     public void onUserLoginClick(ActionEvent actionEvent) {
-
         SceneService.changeScene(actionEvent, "login");
     }
 
@@ -119,7 +115,7 @@ public class RegisterController {
             );
             this.validateUser(user);
             this.userService.registerUser(user);
-            SceneService.showAlert("Registration successfully",
+            SceneService.showAlert("Registration is successful",
                     "User " + usernameField.getText() + " registered successfully",
                     Alert.AlertType.CONFIRMATION);
 
@@ -127,7 +123,6 @@ public class RegisterController {
 
         }catch (Exception e) {
             SceneService.showAlert("Login failed", e.getMessage(), Alert.AlertType.ERROR);
-
         }
     }
 

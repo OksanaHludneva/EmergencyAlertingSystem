@@ -7,12 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 
 public class SceneService {
-
     public static void changeScene(ActionEvent actionEvent, String sceneName){
 
         String scenePath = "/view/" + sceneName + ".fxml";

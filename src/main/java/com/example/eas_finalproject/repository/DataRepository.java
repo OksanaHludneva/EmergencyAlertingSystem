@@ -4,12 +4,10 @@ import lombok.Data;
 
 @Data
 public class DataRepository {
-
     private static DataRepository dataRepository_instance;
 
     private Integer loggedInUserId = null;
     DataRepository() {
-
     }
 
     public static DataRepository getInstance() {

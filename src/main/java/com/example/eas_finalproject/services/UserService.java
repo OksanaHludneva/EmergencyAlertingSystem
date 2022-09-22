@@ -3,13 +3,11 @@ package com.example.eas_finalproject.services;
 import com.example.eas_finalproject.exceptions.UserNotFoundException;
 import com.example.eas_finalproject.models.User;
 import com.example.eas_finalproject.repository.DBConnectionManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserService {
-
     private Connection connection = DBConnectionManager.getConnection();
     public int verifyUserDetails(String username, String password) throws Exception {
         connection = DBConnectionManager.getConnection();
@@ -35,7 +33,6 @@ public class UserService {
         connection = DBConnectionManager.getConnection();
         String query = "INSERT INTO users(username, password, name, email, phone) VALUES(?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
-
 
         preparedStatement.setString(1, user.getUsername());
         preparedStatement.setString(2, user.getPassword());
